@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Translator — Field Notes</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sheet">
+  <header>
+    <h1>Translator</h1>
+    <p>Set down a phrase, choose where it's going.</p>
+  </header>
+
+  <div class="lang-row">
+    <div class="lang-field">
+      <label for="srcLang">From</label>
+      <select id="srcLang"></select>
+    </div>
+    <button class="swap-btn" id="swapBtn" title="Swap languages" aria-label="Swap languages">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+    </button>
+    <div class="lang-field">
+      <label for="tgtLang">To</label>
+      <select id="tgtLang"></select>
+    </div>
+  </div>
+
+  <div class="panels">
+    <div>
+      <div class="panel-label">
+        <span>original</span>
+        <span class="char-count" id="charCount">0 / 500</span>
+      </div>
+      <textarea id="sourceText" maxlength="500" placeholder="Type or paste text here…"></textarea>
+    </div>
+    <div>
+      <div class="panel-label"><span>translation</span></div>
+      <div class="result-box placeholder" id="resultBox">Your translation will appear here.</div>
+      <div class="result-tools">
+        <button class="icon-btn" id="copyBtn" disabled>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Copy
+        </button>
+        <button class="icon-btn" id="speakBtn" disabled>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          Listen
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="translate-btn" id="translateBtn">Translate</button>
+    <span class="status" id="statusText"></span>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
